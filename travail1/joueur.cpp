@@ -4,7 +4,7 @@
 Joueur::Joueur()
 {
 
-	nom = " ";
+	nom = "";
 	nombreVictoires = 0;
 	nombreDefaites = 0;
 		//boucle pour initialiser chaque carte à NULL
