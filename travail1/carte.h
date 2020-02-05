@@ -16,7 +16,7 @@ class Carte
     string atout;  //pique, coeur, trèfle ou carreau
   public:
     Carte();
-	void InitialiserCarte(int, string);
+	void InitialiserCarte(int inValeur, string inAtout);
     int GetValeur() const;
     string GetAtout() const;
 	void Afficher(int X, int Y) const;

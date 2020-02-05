@@ -6,7 +6,7 @@ const int maxCartes = 52;
 
 class Donnees
 {
-	public:
+public:
 
 };
 
