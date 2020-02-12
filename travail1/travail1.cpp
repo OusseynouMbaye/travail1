@@ -13,6 +13,7 @@ Donnees leJeu;
 
 void InitialiserJoueurs();
 void Jouer();
+void Afficher(int nombreDeCartesChiffres, Joueur unJoueur);
 
 int main() 
 {
@@ -26,13 +27,14 @@ int main()
 		cin >> fini;		
 	}
 	
-	
 	return 0;
 }
 
 void Jouer() 
 {
-	//melanger les paquet de cartes
+	/******************************************************
+	melanger les paquet de cartes
+	*******************************************************/
 	string nombreDeCartes;
 	int nombreDeCartesChiffres;
 	for (int i = 0; i < maxCartes; i++)
@@ -45,7 +47,9 @@ void Jouer()
 		leJeu.lePaquetDeCarte[nombreRandom] = temp;
 
 	}
-//nombre de carte a distribuer
+/*************************************************************
+nombre de carte a distribuer
+*************************************************************/
 	
 	cout << "combien de cartes il faut distribuer: ";
 	cin >> nombreDeCartes ;
@@ -54,12 +58,11 @@ void Jouer()
 	{
 		nombreDeCartesChiffres = stoi(nombreDeCartes);
 
-		for (int cpt = 0; cpt < nombreDeCartesChiffres *2; cpt+=2)
+		for (int cpt = 0; cpt < nombreDeCartesChiffres; cpt++)
 		{
 			leJeu.Joueur1.AjouterUneCarteALaMain(&leJeu.lePaquetDeCarte[cpt]) ;
 			leJeu.Joueur2.AjouterUneCarteALaMain(&leJeu.lePaquetDeCarte[cpt+1+nombreDeCartesChiffres]);
 		}
-
 
 	}
 	catch (const std::exception&)
@@ -67,12 +70,36 @@ void Jouer()
 		cout << "Le nombre n'a pas pu etre converti";
 	}
 
+/*********************************************************************
+faire afficher pur chaque joueur le nom,les cartes et total des cartes
+**********************************************************************/
 	
-	
-	
+	Afficher(nombreDeCartesChiffres, leJeu.Joueur1);
+	Afficher(nombreDeCartesChiffres, leJeu.Joueur2);
+
 	
 }
+/***************************************************************************
+fonction qui fait afficher joeur son nom ,ses cartes et le total des cartes
+****************************************************************************/
+void Afficher(int nombreDeCartesChiffres, Joueur unJoueur)
+{
 
+	cout << "nom joueur : ";
+	cout << unJoueur.GetNom()<<"\n";
+
+	for (int  i = 0; i < nombreDeCartesChiffres ; i++)
+	{
+
+		cout << unJoueur.getUneCarteDuPaquet(i)->GetValeur();
+		cout << unJoueur.getUneCarteDuPaquet(i)->GetAtout()<<"\n";
+		cout << unJoueur.additionerLesCarteDuJoueur()<<"\n";
+	}
+
+	
+
+
+}
 void InitialiserJoueurs()
 {
 	string NomJoueur;
