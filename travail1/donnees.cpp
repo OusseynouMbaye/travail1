@@ -3,7 +3,7 @@
 
 Donnees::Donnees()
 {
-	
+	creerLePaquetDeCarte();
 
 }
 
@@ -16,8 +16,6 @@ void Donnees::creerLePaquetDeCarte()
 	creerLesCartes("Trefle", inNumeroDesCartes);
 	creerLesCartes("Carreau", inNumeroDesCartes);
 	
-
-
 
 }
 void Donnees::creerLesCartes(string inAtoutCarte, int &inNumeroDesCartes)
