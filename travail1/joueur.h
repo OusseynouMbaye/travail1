@@ -29,5 +29,6 @@ private:
 		void AjouterDesDefaites(); 
 		void AjouterUneCarteALaMain(Carte* inCarteDuJoueur) ;// quand faire in et const
 		void EnleverToutesLesCartesDUneMain() ;
+		int additionerLesCarteDuJoueur();
 };
 #endif

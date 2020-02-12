@@ -74,6 +74,20 @@ void Joueur::EnleverToutesLesCartesDUneMain()
 	}
 }
 
+int Joueur::additionerLesCarteDuJoueur()
+{
+	int sommme = 0;
+	for (int cpt = 0; cpt < maxCartesAJouer; cpt++)
+	{
+		if (lesCartesDuPaquet[cpt]!=NULL)
+		{
+		sommme = sommme + lesCartesDuPaquet[cpt]->GetValeur();
+		}
+		
+	}
+
+	return  sommme;
+}
 
 
 
