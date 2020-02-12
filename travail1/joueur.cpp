@@ -7,8 +7,7 @@ Joueur::Joueur()
 	nom = "";
 	nombreVictoires = 0;
 	nombreDefaites = 0;
-		//boucle pour initialiser chaque carte à NULL
-		//lesCartesDuPaquet[26];
+		
 	for (int cpt = 0; cpt < maxCartesAJouer; cpt++)
 	{
 		
@@ -97,7 +96,3 @@ int Joueur::additionerLesCarteDuJoueur()
 
 
 
-/*if (lesCartesDuPaquet[cpt] == NULL)
-		{
-			lesCartesDuPaquet[cpt] = inCarteDuJoueur;
-		}*/
